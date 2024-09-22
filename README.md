@@ -10,6 +10,13 @@ Hecho por Noel Del Angel para una prueba tecnica. noel.delangel@outlook.com
 - Type to search con rxjs para buscar users en el servidor controlando tiempo entre solicitudes y con multicast para evitar solicitudes repetidas .
 - Uso de angular-routing
 
+## Para Iniciar sesion
+- Las credenciales del admin por defecto son `admin@example.com` la contrasena: `admin`
+- Los usuarios marcados como admin, son los unicos que pueden editar usuarios.
+- Ejemplos de otras cuentas son `noel.delangel@outlook.com`, `aragonknoel@gmail.com`
+- La contrasena por defecto en los otros usuarios es: `zxcv1234`
+ 
+
 
 ## Para correr el proyecto
 - Antes de iniciar:
