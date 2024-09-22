@@ -1,0 +1,37 @@
+<div class="content">
+    <h1>
+        Dashboard
+    </h1>
+    <mat-grid-list cols="3" >
+        <mat-grid-tile colspan="3" rowspan="1">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+
+                        <h2>
+                            {{userCount$|async}} <mat-icon>people</mat-icon>
+                        </h2>
+                        <p>Users </p>
+
+
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <a mat-button go-to routerLink="/users">
+                        Go to users <mat-icon>open_in_new</mat-icon>
+                    </a>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img src="/assets/img/chart1.png" alt="">
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img src="/assets/img/chart2.png" alt="">
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img src="/assets/img/chart3.png" alt="">
+
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

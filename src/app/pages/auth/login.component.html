@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+            </p>
+
+
+            <p>
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+            </p>
+
+
+            <div class="button">
+                <a (click)="moreInfo=!moreInfo" moreInfoToggle>
+                    <mat-icon *ngIf="!moreInfo">arrow_right</mat-icon>
+                    <mat-icon *ngIf="moreInfo">arrow_drop_down</mat-icon>
+                    More info
+                </a>
+                <button type="submit" color="primary" mat-button>Login</button>
+            </div>
+
+
+            <div *ngIf="moreInfo" moreInfo>
+                <p>
+                    You can login with the admin account using the following credentials:<br>
+                    Email: <b>'admin@example.com'</b>  <br>
+                    Password: <b>'administrador'</b>  <br>
+                    <br>
+                    You can also login with any other account with <u> limited permissions </u>.
+                    If you do so, you can only list users but not create, edit or delete them.
+                    <br><br>
+                    The default password for other accounts is <b> 'zxcv1234'</b>
+                    <br><br>
+                    Some example not admin accounts are: <br>
+                </p>
+                <ul>
+                    <li>noel.delangel@outlook.com</li>
+                    <li>aragonknoel@gmail.com</li>
+                </ul>
+            </div>
+        </form>
+
+    </mat-card-content>
+</mat-card>

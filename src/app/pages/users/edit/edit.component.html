@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>{{edit? 'Edit':'Create'}} User</h2>
+<mat-dialog-content >
+  <form [formGroup]="form">
+      <mat-form-field >
+        <mat-label>Name</mat-label>
+        <input matInput required formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput required formControlName="email" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [required]="!edit" formControlName="password" />
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="save()" [disabled]="!form.valid" cdkFocusInitial>Save</button>
+</mat-dialog-actions>

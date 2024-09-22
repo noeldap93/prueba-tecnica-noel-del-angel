@@ -1,0 +1,56 @@
+<h1>Users </h1>
+<p *ngIf="!(isAdmin$|async)">
+    You are not an admin. You can not create, edit or delete users.
+</p>
+<div controls>
+    <mat-form-field class="example-form-field">
+        <mat-label>Type to search</mat-label>
+        <input matInput type="text" [(ngModel)]="query" (ngModelChange)="setQuery($event)">
+        <button *ngIf="query" matSuffix mat-icon-button aria-label="Clear" (click)="setQuery('')">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" [disabled]="!(isAdmin$|async)" (click)="this.createUser()">Create
+        User</button>
+</div>
+
+
+<table mat-table [dataSource]="(dataSource$|async)||[]" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let user">
+            <button mat-button [disabled]="!(isAdmin$|async)" (click)="editUser(user)">
+                <mat-icon>edit</mat-icon></button>
+            <button mat-button [disabled]="!(isAdmin$|async)" color="warn" (click)="deleteUser(user)">
+                <mat-icon>delete_forever</mat-icon></button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<div spinner>
+    <mat-spinner diameter="50" *ngIf="!(dataSource$|async)"></mat-spinner>
+</div>

@@ -1,0 +1,43 @@
+:host {
+    width: 100%;
+    ;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+}
+
+[app-name] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[logged] {
+    display: flex;
+    align-items: center;
+    font-size: smaller;
+    gap: 20px;
+}
+
+[links] {
+    display: flex;
+    gap: 20px;
+
+    a {
+        // color: #BBB;
+        &.active {
+            // color: white;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+    }
+}
+
+
+[user-info],
+[user-info] div {
+    display: flex;
+    align-items: center;
+    // gap:5px;
+}

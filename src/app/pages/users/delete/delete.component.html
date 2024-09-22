@@ -1,0 +1,7 @@
+<mat-dialog-content>
+    Are you sure you want to delete {{user.name}}?
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" cdkFocusInitial>Cancel</button>
+    <button mat-button (click)="onYesClick()" color="warn" >Delete</button>
+</mat-dialog-actions>
